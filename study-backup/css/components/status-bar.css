@@ -1,0 +1,42 @@
+.status-bar {
+  /* 상태바를 상위로 고정 */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  /* space-between 활용시 content 크기에 따라 깔끔하게 정렬이 안될 수 있다 
+    각 content에 width를 %로 지정해서 보다 정확하게 배치*/
+  justify-content: center;
+  /* reset css를 하였으니, 기본값 설정 */
+  padding: 5px 3px;
+  /* padding만큼 box가 커지지 않도록 사이즈 조정 */
+  box-sizing: border-box;
+}
+
+.status-bar__column {
+  width: 33%;
+}
+
+/* 첫번째 span인 no service, 시간, 배터리 %와 아이콘과 간격 생성 */
+.status-bar__column:first-child span {
+  margin-right: 5px;
+}
+
+/* 가운데 column안의 content는 가운데 */
+.status-bar__column:nth-child(2) {
+  display: flex;
+  justify-content: center;
+}
+
+/* 마지막 column안의 content는 끝에
+  align-items을 활용하여 아이콘까지 세로정렬*/
+.status-bar__column:last-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* 배터리 아이콘에게 좌우 간격을 줌 */
+.status-bar__column .fa-battery-full {
+  margin: 0px 5px;
+}

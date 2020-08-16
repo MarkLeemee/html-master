@@ -1,0 +1,72 @@
+.welcome-header {
+  /* 위로는 상태바, 아래로는 form과의 간격 */
+  margin: 90px 0px;
+  /* h나 p같은 텍스트를 다룰 때 */
+  text-align: center;
+  display: flex;
+  /* content를 옆으로 배치가 아니라 위아로 배치
+    flex direction을 조정해주었으니, justify-content가 아닌 align-items를 활용 */
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-header__title {
+  /* title과 text간격 */
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+.welcome-header__text {
+  /* 텍스트의 크기 지정하여 일정 길이를 못넘어가게 조절 */
+  width: 60%;
+  opacity: 0.7;
+}
+
+/* 이하 id를 활용한 방식은 학습용이지 실제로는 class를 지정해줘서 활용하면 보다 쉽고 효율적으로 코딩이 가능하다. */
+#login-form {
+  display: flex;
+  /* 세로로 배치 */
+  flex-direction: column;
+  margin: 0px 30px;
+}
+
+/* input 꾸며주기 */
+#login-form input {
+  border: none;
+  padding: 15px 0px;
+  font-size: 18px;
+  margin-bottom: 25px;
+  /* border-color 변경 시 에니메이션 효과 */
+  transition: border-color 0.3s ease-in-out;
+}
+
+/* submit 타입을 제외한 input 태그들에 효과를 넣어줌 */
+#login-form input:not([type="submit"]) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s ease-in-out;
+}
+
+#login-form input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+#login-form input:focus {
+  /* 선택시 변수 컬러 설정 */
+  border-color: var(--yellow);
+}
+
+/* login-form id의 input자식들 중 속성이 type="submit"인 아이만 */
+#login-form input[type="submit"] {
+  background-color: var(--yellow);
+  cursor: pointer;
+  padding: 20px 0px;
+  border-radius: 5px;
+}
+
+#login-form a {
+  text-align: center;
+  text-decoration: none;
+  /* inherit은 부모의 속성을 상속받는다 */
+  color: inherit;
+  font-size: 13px;
+}

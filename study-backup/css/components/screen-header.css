@@ -1,0 +1,48 @@
+.screen-header {
+  display: flex;
+  /* h와 div태그의 간격설정 (각각의 아이콘이 아니다 */
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  padding: var(--horizontal-space);
+}
+
+.screen-header__title {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.screen-header__icons span {
+  margin-left: 25px;
+  position: relative;
+}
+
+/* 마우스 올려놨을 때 돌아가는 효과 */
+@keyframes rotateCog {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.screen-header__icons .fa-cog:hover {
+  animation: rotateCog 1s linear infinite;
+}
+
+.screen-header__small-notification {
+  background-color: tomato;
+  height: 10px;
+  width: 10px;
+  border-radius: 15px;
+  /* span은 block 타입임으로 flex로 선언하여 content 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position을 활용하여 메세지 아이콘과 겹치게 설정 (새로운 레이어에 올려진다) */
+  position: absolute;
+  left: 70px;
+  bottom: 30px;
+}

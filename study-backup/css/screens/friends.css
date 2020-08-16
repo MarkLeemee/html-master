@@ -1,0 +1,62 @@
+#friends-display-link {
+  text-align: center;
+  display: block;
+  background-color: #fafafa;
+  padding: 15px 0px;
+  font-size: 18px;
+  margin-bottom: 15px;
+  /* chat 페이지 때문에 공통으로 screen-head에 마진을 넣었지만,
+    friends 페이지에서는 불필요하기에 네거티브 값을 넣어줌으로써 해결 */
+  margin-top: -15px;
+}
+
+/* i태그는 text형식으로 색상 변경이 가능하다 */
+#friends-display-link i {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.friends-screen {
+  padding: 0px var(--horizontal-space);
+}
+
+.friends-screen__channel {
+  margin-top: 25px;
+  border-top: var(--main-border);
+  padding-top: 15px;
+}
+
+.friends-screen__channel-header {
+  margin-bottom: 30px;
+  /* 채널 헤더 역시 텍스트와 아이콘 사이 간격을 벌려준다 */
+  display: flex;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes hideSplashScreen {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    /* 단순히 비주얼적으로 없애는게 아니라, 엘리먼트 자체를 숨긴다 */
+    /* 단, 엘리먼트 자체를 없애고 싶으면 js를 활용해야 한다 */
+    visibility: hidden;
+  }
+}
+
+#splash-screen {
+  background-color: var(--yellow);
+  position: absolute;
+  /* 전체화면 */
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 132px;
+  /* forwards 속성을 통해서 초기값으로 돌아오지 않고 마지막값으로 유지 */
+  animation: hideSplashScreen 0.3s ease-in-out forwards;
+  animation-delay: 1s;
+}
